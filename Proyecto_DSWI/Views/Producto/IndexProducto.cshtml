@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "IndexProducto";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<script>
+    cantidadProductos();
+    function cantidadProductos() {
+        var e = 1;
+        totalProductos = document.getElementById('totalProductos');
+        fetch("ListaProducto").
+            then(response => response.json()).
+            then(respuesta => {
+                console.log(respuesta)
+                let resultado = "";
+
+
+                resultado += '<tr taskId=' + respuesta.codigo + '>' + '<td>' + respuesta.length + '</td>'
+
+
+
+                totalProductos.innerHTML = resultado;
+
+
+            });
+    }
+
+
+
+</script>

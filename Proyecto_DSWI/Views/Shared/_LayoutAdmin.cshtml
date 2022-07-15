@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Administrador</title>
+    <!---DATATABLES-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <!-- Custom fonts for this template-->
+    <link href="~/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+    <link href="~/admin/css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    
+    <div id="wrapper" >
+
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="color:brown">
+
+     
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                   
+                </div>
+                <div class="sidebar-brand-text mx-3"> administración <sup></sup></div>
+            </a>
+
+       
+            <hr class="sidebar-divider my-0">
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                   aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Opciones</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                   
+                        @Html.ActionLink("Mantenimiento Producto", "CrudProducto", "Producto",
+                                                           new { @class = "collapse-item" })
+
+                        <a id="tienda" onclick="tienda();" class="collapse-item">Tienda</a>
+                    </div>
+                </div>
+            </li>
+
+            <hr class="sidebar-divider">
+
+            <div class="sidebar-heading">
+            
+            </div>
+
+            <li class="nav-item">
+                <a class="nav-link" href="~/VentaProducto/Login">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Salir</span>
+                </a>
+            </li>
+         
+        </ul>
+       
+  
+    @RenderBody()
+ </div>
+ 
+
+   
+    <script src="~/admin/vendor/jquery/jquery.min.js"></script>
+    <script src="~/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <script src="~/admin/js/sb-admin-2.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script>
+        function tienda() {
+            window.open ("@Url.Content("~/VentaProducto/Principal")",'_blank');
+        }
+
+         function Salir() {
+            window.open ("@Url.Content("~/VentaProducto/Login")");
+        }
+    </script>
+
+</body>
+
+</html>
